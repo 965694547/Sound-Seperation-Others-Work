@@ -1,0 +1,35 @@
+data:
+  mode: min
+  n_src: 2
+  sample_rate: 8000
+  segment: 2.0
+  task: sep_clean
+  train_dir: data/wham/wav8k/min/tr
+  valid_dir: data/wham/wav8k/min/cv
+filterbank:
+  kernel_size: 2
+  n_filters: 64
+  stride: 1
+masknet:
+  bidirectional: true
+  bn_chan: 128
+  chunk_size: 250
+  dropout: 0
+  hid_size: 128
+  hop_size: 125
+  in_chan: 64
+  mask_act: relu
+  n_repeats: 6
+  out_chan: 64
+optim:
+  lr: 0.001
+  optimizer: adam
+  weight_decay: 1.0e-05
+positional arguments: {}
+training:
+  batch_size: 2
+  early_stop: true
+  epochs: 800
+  gradient_clipping: 5
+  half_lr: true
+  num_workers: 8

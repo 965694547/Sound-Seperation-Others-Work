@@ -1,0 +1,30 @@
+data:
+  mode: min
+  n_src: 2
+  sample_rate: 8000
+  segment: 3
+  task: sep_clean
+  train_dir: data/librimix/wav8k/min/train-100
+  valid_dir: data/librimix/wav8k/min/dev
+filterbank:
+  kernel_size: 16
+  n_filters: 512
+  stride: 8
+masknet:
+  bn_chan: 128
+  hid_chan: 512
+  mask_act: relu
+  n_blocks: 8
+  n_repeats: 3
+  skip_chan: 128
+optim:
+  lr: 0.001
+  optimizer: adam
+  weight_decay: 0.0
+positional arguments: {}
+training:
+  batch_size: 2
+  early_stop: true
+  epochs: 100
+  half_lr: true
+  num_workers: 8
